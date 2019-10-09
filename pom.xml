@@ -108,26 +108,12 @@
     <CodeCacheSize>512m</CodeCacheSize>
   </properties>
 
-  <repositories>
-    <repository>
-      <id>central</id>
-      <!-- This should be at top, it makes maven try the central repo first and then others and hence faster dep resolution -->
-      <name>Maven Repository</name>
-      <url>https://repo1.maven.org/maven2</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
   <pluginRepositories>
     <pluginRepository>
       <id>central</id>
       <url>https://repo1.maven.org/maven2</url>
       <releases>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
       </releases>
       <snapshots>
         <enabled>false</enabled>
@@ -472,11 +458,6 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
