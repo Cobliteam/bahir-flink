@@ -283,13 +283,13 @@ if [[ "$RELEASE_PUBLISH" == "true" ]]; then
     cd target/bahir-flink
 
     #Deploy default scala 2.11
-    mvn $PUBLISH_PROFILES -DaltDeploymentRepository=apache.releases.https::default::https://repository.apache.org/service/local/staging/deploy/maven2 clean package gpg:sign install:install deploy:deploy -DskipTests -Pscala-2.11 -Darguments="-DskipTests" -Dgpg.passphrase=$GPG_PASSPHRASE
+#    mvn $PUBLISH_PROFILES -DaltDeploymentRepository=apache.releases.https::default::https://repository.apache.org/service/local/staging/deploy/maven2 clean package gpg:sign install:install deploy:deploy -DskipTests -Pscala-2.11 -Darguments="-DskipTests" -Dgpg.passphrase=$GPG_PASSPHRASE
 
     mvn clean
 
     #Deploy scala 2.12
-    ./dev/change-scala-version.sh 2.12
-    mvn $PUBLISH_PROFILES -DaltDeploymentRepository=apache.releases.https::default::https://repository.apache.org/service/local/staging/deploy/maven2 clean package gpg:sign install:install deploy:deploy -DskipTests -Pscala-2.12 -Darguments="-DskipTests" -Dgpg.passphrase=$GPG_PASSPHRASE
+#    ./dev/change-scala-version.sh 2.12
+#    mvn $PUBLISH_PROFILES -DaltDeploymentRepository=apache.releases.https::default::https://repository.apache.org/service/local/staging/deploy/maven2 clean package gpg:sign install:install deploy:deploy -DskipTests -Pscala-2.12 -Darguments="-DskipTests" -Dgpg.passphrase=$GPG_PASSPHRASE
 
     cd "$BASE_DIR" #exit target
 
@@ -315,11 +315,11 @@ if [[ "$RELEASE_SNAPSHOT" == "true" ]]; then
     fi
 
     #Deploy default scala 2.11
-    $MVN $PUBLISH_PROFILES -DaltDeploymentRepository=apache.snapshots.https::default::https://repository.apache.org/content/repositories/snapshots clean package gpg:sign install:install deploy:deploy -DskipTests -Darguments="-DskipTests" -Pscala-2.11 -Dgpg.passphrase=$GPG_PASSPHRASE
+#    $MVN $PUBLISH_PROFILES -DaltDeploymentRepository=apache.snapshots.https::default::https://repository.apache.org/content/repositories/snapshots clean package gpg:sign install:install deploy:deploy -DskipTests -Darguments="-DskipTests" -Pscala-2.11 -Dgpg.passphrase=$GPG_PASSPHRASE
 
     #Deploy scala 2.12
-    ./dev/change-scala-version.sh 2.12
-    $MVN $PUBLISH_PROFILES -DaltDeploymentRepository=apache.snapshots.https::default::https://repository.apache.org/content/repositories/snapshots clean package gpg:sign install:install deploy:deploy -DskipTests -Darguments="-DskipTests" -Pscala-2.12 -Dgpg.passphrase=$GPG_PASSPHRASE
+#    ./dev/change-scala-version.sh 2.12
+#    $MVN $PUBLISH_PROFILES -DaltDeploymentRepository=apache.snapshots.https::default::https://repository.apache.org/content/repositories/snapshots clean package gpg:sign install:install deploy:deploy -DskipTests -Darguments="-DskipTests" -Pscala-2.12 -Dgpg.passphrase=$GPG_PASSPHRASE
 
     cd "$BASE_DIR" #exit target
     exit 0
