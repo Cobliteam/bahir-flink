@@ -18,14 +18,14 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
+<!--   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache</artifactId>
     <version>21</version>
-  </parent>
-  <groupId>org.apache.bahir</groupId>
+  </parent> -->
+  <groupId>co.cobli</groupId>
   <artifactId>bahir-flink-parent_2.11</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.8.0-1.2.0</version>
   <packaging>pom</packaging>
   <name>Apache Bahir for Apache Flink - Parent POM</name>
   <url>http://bahir.apache.org/</url>
@@ -689,6 +689,14 @@
         </executions>
       </plugin>
     </plugins>
+
+    <extensions>
+      <extension>
+          <groupId>com.gkatzioura.maven.cloud</groupId>
+          <artifactId>s3-storage-wagon</artifactId>
+          <version>2.0</version>
+      </extension>
+    </extensions>
   </build>
 
   <profiles>
@@ -785,5 +793,13 @@
     </profile>
 
   </profiles>
+
+  <distributionManagement>
+    <repository>
+      <uniqueVersion>true</uniqueVersion>
+        <id>cobli-repo</id>
+        <url>s3://repo.cobli.co</url>
+    </repository>
+  </distributionManagement>
 </project>
 
