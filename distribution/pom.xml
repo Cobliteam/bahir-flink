@@ -21,7 +21,7 @@
     <parent>
         <groupId>cobli.co</groupId>
         <artifactId>bahir-flink-parent_2.11</artifactId>
-        <version>1.8.0-1.2.0</version>
+        <version>1.8.0-1.2.1</version>
         <relativePath>..</relativePath>
     </parent>
 
